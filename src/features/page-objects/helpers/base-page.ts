@@ -8,13 +8,13 @@ export async function waitUntilElementIsDisplayed(locator: string) {
 }
 
 export async function waitUntilTextIsDisplayed(text: string) {
-    const locator = `/*//*[@text="${text}"]`;
+    const locator = `//*[text()="${text}"]`;
     await $(locator).waitForDisplayed({ timeoutMsg: `Text ${text} is not displayed` });
     return $(locator);
 }
 
 export async function waitUntilPageContainsText(text: string) {
-    const locator = `/*//*[contains(@text, '${text}')]`;
+    const locator = `//*[contains(text(), '${text}')]`;
     await $(locator).waitForDisplayed({ timeoutMsg: `Page does not contain text ${text}` });
     return $(locator);
 }

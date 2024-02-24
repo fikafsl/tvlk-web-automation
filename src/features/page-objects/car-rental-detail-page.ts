@@ -9,17 +9,17 @@ export async function selectRentalPickupLocation(locationTypeLabel: string, addr
 }
 
 export async function selectRentalDropoffLocation(locationTypeLabel: string, address: string) {
-    await delayMs(5000);
+    await delayMs(2000);
     await clickElement(`//*[@id="RENTAL_DROPOFF_LOCATION"]//*[@role="radio"]//*[text()="${locationTypeLabel}"]`);
     await inputText(
         `//*[@id="RENTAL_DROPOFF_LOCATION"]//*[text()="${locationTypeLabel}"]/following::*[text()="Search location or address"]/following::input[1]`,
         address
     );
     await clickElement(`//*[@id="RENTAL_DROPOFF_LOCATION"]//*[@aria-label="${address}"][1]`);
-    await delayMs(5000);
 }
 
 export async function fillNotes(notes: string) {
+    await delayMs(2000);
     await inputText('//*[@placeholder="Additional notes (optional)"]', notes);
 }
 

@@ -15,5 +15,5 @@ Feature: Car Rental Booking
         And user select car rental provider with name contains "TRAC"
         And user select "Rental Office" at "Jakarta" as the Pick-up Location
         And user select "Other Locations" at "Slipi" as the Drop-off Location
-        And user fill notes "Pelan pelan pak supir"
+        And user fill notes "Lokasi sesuai titik"
         And user click Continue button on rental detail page

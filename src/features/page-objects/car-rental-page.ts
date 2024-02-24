@@ -1,5 +1,5 @@
 import dayjs from './helpers/dayjs';
-import { clickElement, getTextFromElement, inputText, waitUntilElementIsDisplayed } from './helpers/base-page';
+import { clickElement, delayMs, inputText, waitUntilElementIsDisplayed } from './helpers/base-page';
 
 export async function userIsOnCarRentalTab() {
     await waitUntilElementIsDisplayed('//*[@data-testid="rental-search-form"]');
@@ -21,6 +21,7 @@ async function selectDate(date: Date) {
 }
 
 async function selectTime(hour: number, minute: number) {
+    await delayMs(1000);
     await clickElement(`//*[text()="Hour"]/following-sibling::div//*[text()="${hour}"]`);
     await clickElement(`//*[text()="Minute"]/following-sibling::div//*[text()="${minute}"]`);
     await clickElement('//*[@role="button"]//*[text()="Done"]');
